@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NanoID test</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+    <script type="module">
+        import { nanoid } from 'https://cdn.skypack.dev/nanoid';
+        function updateNanoId() {
+            const size = parseInt(document.getElementById('id_length').value) || 0;
+            document.getElementById('nanoid_text').innerText = nanoid(size);
+        }
+        window.updateNanoId = updateNanoId;
+    </script>
+</head>
+<body>
+    <div class="container card p-5" style="width: 30rem;margin-top: 100px;">
+        <div class="d-flex flex-column align-items-center">
+            <a href="https://github.com/ai/nanoid">
+                <img src="https://zelark.github.io/nano-id-cc/logo.svg" alt="" width="180" height="94">
+            </a>
+            <h1>NanoID Test</h1>
+        </div>
+        <br/>
+        <label class="form-label font-weight-bold" for="id_length">Lenght</label>
+        <input autofocus type="text" class="w-25" size="10" id="id_length" value="" placeholder="ID lenght" onchange="updateNanoId()">
+        <br/>
+        <label class="form-label font-weight-bold" for="nanoid_text">Random Nano ID</label>
+        <p id="nanoid_text"></p>
+    </div>
+</body>
+</html>
