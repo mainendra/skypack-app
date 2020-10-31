@@ -1,6 +1,6 @@
 # Test page using skypack
 
-Test page using skypack to generate random id using nanoid library.
+Test page using [skypack](https://www.skypack.dev) to generate random id using [nanoid](https://github.com/ai/nanoid) library.
 
 # How to use?
 
